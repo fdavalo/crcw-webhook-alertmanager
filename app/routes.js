@@ -10,7 +10,15 @@ const routes = {
             res.json({'result': 'no alerts found in payload'})
             return
         }
+        
+        alerts.forEach(alert => Alerts.push(alert)); 
 
+    },
+    getAlerts: async (req, res) => {
+        html = "<html><body>";
+        Alerts.forEach(part => html += part);
+
+        res.json({'result': html})
     },
 }
 
