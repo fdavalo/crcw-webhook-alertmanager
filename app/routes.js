@@ -1,6 +1,6 @@
 const utils = require('./utils')
 
-global.Alerts = {}
+global.Alerts = []
 
 const routes = {
     postAlerts: async (req, res) => {
