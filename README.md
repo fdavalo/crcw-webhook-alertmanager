@@ -17,6 +17,7 @@ FROM [codenvy/node](https://hub.docker.com/r/codenvy/node/)
 
 #alertmanager.yaml for open-cluster-management-observability
 
+`
 "global":
   "resolve_timeout": "5m"
 "receivers":
@@ -39,3 +40,4 @@ FROM [codenvy/node](https://hub.docker.com/r/codenvy/node/)
   - "receiver": "Critical"
     "match":
         "severity": "critical"
+`
