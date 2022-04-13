@@ -5,7 +5,10 @@ global.Alerts = []
 const routes = {
     postAlerts: async (req, res) => {
         console.log(req.body);
-        if (! req.body) return
+        if (! req.body) {
+            res.send("OK")
+            return
+        }
         const alerts = utils.parseAlerts(req.body)
 
         if (!alerts) {
