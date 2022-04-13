@@ -68,6 +68,10 @@ const utils = {
         })
         return alerts
     },
+    
+    addPart: html, part => {
+        html["text"] += part;
+    }
 }
 
 module.exports = utils
