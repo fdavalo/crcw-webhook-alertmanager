@@ -1,6 +1,6 @@
 const utils = {
 
-    formatAlert: data => {
+    formatAlert: (data, group) => {
         /*
         Format a single alert into a message string.
          */
@@ -39,9 +39,9 @@ const utils = {
         } else if (data.labels.instance !== undefined) {
             parts.push(data.labels.instance)
         }
-        if (data.commonLabels != undefined && data.commonLabels.cluster !== undefined) {
+        if (group.commonLabels != undefined && group.commonLabels.cluster !== undefined) {
             parts.push(' on ')
-            parts.push(data.commonLabels.cluster)
+            parts.push(group.commonLabels.cluster)
         }
 
         // additional descriptive content
@@ -67,7 +67,7 @@ const utils = {
         let alerts = []
 
         data.alerts.forEach(alert => {
-            alerts.push(utils.formatAlert(alert))
+            alerts.push(utils.formatAlert(alert, data))
         })
         return alerts
     },
