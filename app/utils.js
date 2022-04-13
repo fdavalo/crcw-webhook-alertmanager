@@ -8,17 +8,16 @@ const utils = {
         //console.log(data)
 
         if (data.status === 'firing') {
-            if (process.env.MENTION_ROOM === "1") {
-                parts.push('@room', '<br>')
-            }
             let color = (function(severity) {
                 switch(severity) {
+                  case 'critical':
+                    return '#dc3545'; // red
                   case 'warning':
                     return '#ffc107'; // orange
                   case 'none':
                     return '#17a2b8'; // blue
                   default:
-                    return '#dc3545'; // red
+                    return '#008000'; // green
                 }
               })(data.labels.severity);
             parts.push('<strong><font color=\"' + color + '\">FIRING:</font></strong>')
@@ -39,6 +38,10 @@ const utils = {
             parts.push(data.labels.host)
         } else if (data.labels.instance !== undefined) {
             parts.push(data.labels.instance)
+        }
+        if (data.commonLabels.cluster !== undefined) {
+            parts.push(' at ')
+            parts.push(data.commonLabels.cluster)
         }
 
         // additional descriptive content
