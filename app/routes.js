@@ -18,7 +18,7 @@ const routes = {
         html = {"text": "<html><body>"};
         Alerts.forEach(part => utils.addPart(html, part));
         html["text"] += "</body></html>";
-        res.json({'result': html["text"]})
+        res.send(html["text"])
     },
 }
 
