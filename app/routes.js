@@ -4,7 +4,7 @@ global.Alerts = []
 
 const routes = {
     postAlerts: (req, res) => {
-        console.log(req.body);
+        console.log(req);
         const alerts = utils.parseAlerts(req.body)
 
         if (!alerts) {
