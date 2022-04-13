@@ -14,12 +14,16 @@ const routes = require('./routes')
 /*eslint-env node*/
 
 var express = require('express');
+var bodyParser = require('body-parser')
+ 
 var app = express();
+
+var jsonParser = bodyParser.json()
 
 app.get('/', function (req, res) {
   res.send('Hello World!');
 });
-app.post('/alerts', routes.postAlerts);
+app.post('/alerts', jsonParser, routes.postAlerts);
 app.get('/alerts', routes.getAlerts);
 
 app.listen(3000, function () {
