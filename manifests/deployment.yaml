@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crcw-webhook-alertmanager
+  namespace: codeready-codeready
+spec:
+  selector:
+    matchLabels:
+      app: crcw-webhook-alertmanager
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: crcw-webhook-alertmanager
+    spec:
+      containers:
+        - name: crcw-webhook-alertmanager
+          image: >-
+            quay.io/fdavalo/crcw-webhook-alertmanager:latest
+          ports:
+            - containerPort: 3000
+          command: ['node', 'app/app.js']
