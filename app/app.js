@@ -9,6 +9,7 @@
  * Contributors:
  *   Red Hat, Inc. - initial API and implementation
  */
+const routes = require('./routes')
 
 /*eslint-env node*/
 
@@ -18,6 +19,8 @@ var app = express();
 app.get('/', function (req, res) {
   res.send('Hello World!');
 });
+app.post('/alerts', routes.postAlerts);
+app.get('/alerts', routes.getAlerts);
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
