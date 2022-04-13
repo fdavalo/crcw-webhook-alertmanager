@@ -5,6 +5,7 @@ global.Alerts = []
 const routes = {
     postAlerts: async (req, res) => {
         const alerts = utils.parseAlerts(req.body)
+        console.log(req.body);
 
         if (!alerts) {
             res.json({'result': 'no alerts found in payload'})
