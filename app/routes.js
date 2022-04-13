@@ -14,11 +14,11 @@ const routes = {
         alerts.forEach(alert => Alerts.push(alert)); 
 
     },
-    getAlerts: async (req, res) => {
-        html = "<html><body>";
-        Alerts.forEach(part => html += part);
+    getAlerts: (req, res) => {
+        html = {"text": "<html><body>"};
+        Alerts.forEach(part => utils.addPart(html, part));
 
-        res.json({'result': html})
+        res.json({'result': html["text"]})
     },
 }
 
