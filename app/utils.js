@@ -39,8 +39,8 @@ const utils = {
         } else if (data.labels.instance !== undefined) {
             parts.push(data.labels.instance)
         }
-        if (data.commonLabels.cluster !== undefined) {
-            parts.push(' at ')
+        if (data.commonLabels != undefined && data.commonLabels.cluster !== undefined) {
+            parts.push(' on ')
             parts.push(data.commonLabels.cluster)
         }
 
