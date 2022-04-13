@@ -3,9 +3,10 @@ const utils = require('./utils')
 global.Alerts = []
 
 const routes = {
-    postAlerts: async (req, res) => {
+    postAlerts: (req, res) => {
         console.log(req.body);
         if (! req.body) {
+            console.log(req);
             res.send("OK")
             return
         }
