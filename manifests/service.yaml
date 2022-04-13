@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: crcw-webhook-alertmanager
+spec:
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  selector:
+    app: crcw-webhook-alertmanager
