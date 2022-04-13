@@ -18,26 +18,26 @@ FROM [codenvy/node](https://hub.docker.com/r/codenvy/node/)
 #alertmanager.yaml for open-cluster-management-observability
 
 `
-"global":
-  "resolve_timeout": "5m"
-"receivers":
-- "name": "null"
-- "name": "Critical"
-  "webhook_configs":
-      - "url": "http://crcw-webhook-alertmanager.codeready-codeready.svc.cluster.local/alerts"
-"route":
-  "group_by":
-  - "cluster"
-  - "namespace"
-  "group_interval": "5m"
-  "group_wait": "30s"
-  "receiver": "null"
-  "repeat_interval": "12h"
-  "routes":
-  - "match":
-      "alertname": "Watchdog"
-    "receiver": "null"
-  - "receiver": "Critical"
-    "match":
-        "severity": "critical"
+                "global":
+                  "resolve_timeout": "5m"
+                "receivers":
+                - "name": "null"
+                - "name": "Critical"
+                  "webhook_configs":
+                      - "url": "http://crcw-webhook-alertmanager.codeready-codeready.svc.cluster.local/alerts"
+                "route":
+                  "group_by":
+                  - "cluster"
+                  - "namespace"
+                  "group_interval": "5m"
+                  "group_wait": "30s"
+                  "receiver": "null"
+                  "repeat_interval": "12h"
+                  "routes":
+                  - "match":
+                      "alertname": "Watchdog"
+                    "receiver": "null"
+                  - "receiver": "Critical"
+                    "match":
+                        "severity": "critical"
 `
