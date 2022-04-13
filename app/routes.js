@@ -3,8 +3,9 @@ const utils = require('./utils')
 global.Alerts = []
 
 const routes = {
-    postAlerts: (req, res) => {
-        console.log(req);
+    postAlerts: async (req, res) => {
+        console.log(req.body);
+        if (! req.body) return
         const alerts = utils.parseAlerts(req.body)
 
         if (!alerts) {
