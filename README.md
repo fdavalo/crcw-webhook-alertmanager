@@ -15,7 +15,7 @@ FROM [codenvy/node](https://hub.docker.com/r/codenvy/node/)
 | :------------- |:-------------| :-----|
 | 1      | Run | `node app/app.js` |
 
-#alertmanager.yaml for open-cluster-management-observability
+#alertmanager.yaml for open-cluster-management-observability, as a secret
 
 
                 "global":
