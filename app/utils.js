@@ -69,7 +69,7 @@ const utils = {
         return alerts
     },
     
-    addPart: html, part => {
+    addPart: (html, part) => {
         html["text"] += part;
     }
 }
