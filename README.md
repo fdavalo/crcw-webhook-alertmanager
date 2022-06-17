@@ -41,3 +41,7 @@ FROM [codenvy/node](https://hub.docker.com/r/codenvy/node/)
                     "match":
                         "severity": "critical"
 
+
+# GET /alerts prints alerts firing
+
+# POST /alerts used by alertmanager to send alerts
